@@ -85,7 +85,7 @@ public class ServerManager {
         return currentServerProcess.isAlive();
     }
 
-    private void consumeStream(String name, InputStream inputStream) {
+    private void consumeStream(final String name, final InputStream inputStream) {
         Thread streamConsumerThread = new Thread(new Runnable() {
             @Override
             public void run() {

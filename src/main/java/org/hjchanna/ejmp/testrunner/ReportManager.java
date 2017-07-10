@@ -75,7 +75,7 @@ public class ReportManager {
         ProcessBuilder processBuilder = new ProcessBuilder(arguments);
         processBuilder.redirectErrorStream(true);
         processBuilder.directory(new File(this.workingDirectory));
-        Process currentProcess = processBuilder.start();
+        final Process currentProcess = processBuilder.start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
@@ -112,7 +112,7 @@ public class ReportManager {
         return argumentsList.toArray(new String[argumentsList.size()]);
     }
 
-    private void consumeStream(String reportType, File resultFile, Process process) {
+    private void consumeStream(final String reportType, final File resultFile, final Process process) {
         Thread streamConsumerThread = new Thread(new Runnable() {
             @Override
             public void run() {
