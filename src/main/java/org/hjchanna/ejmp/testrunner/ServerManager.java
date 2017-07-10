@@ -81,10 +81,6 @@ public class ServerManager {
         currentServerProcess.destroy();
     }
 
-    public boolean isServerAlive() {
-        return currentServerProcess.isAlive();
-    }
-
     private void consumeStream(final String name, final InputStream inputStream) {
         Thread streamConsumerThread = new Thread(new Runnable() {
             @Override
